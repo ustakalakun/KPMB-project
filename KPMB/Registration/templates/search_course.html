@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPM Beranang Course Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007acc;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        form {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        strong {
+            font-size: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 60%;
+            border: 2px solid #007acc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007acc;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #005e9e;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            margin: 20px auto;
+        }
+
+        .course-info {
+            background-color: white;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .message {
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to KPM Beranang</h1>
+    </header>
+    <main>
+        <section>
+            <form action="" method="get">
+                <strong>Search Course</strong>
+                <br><br>
+                Enter Course : <input type="text" name="c_code">
+                <input type="submit" value="SEARCH">
+            </form>
+        </section>
+        <section>
+            <p>
+                {% for value in data %}
+                    <div class="course-info">
+                        <p><strong>Code:</strong> {{value.code}}</p>
+                        <p><strong>Description:</strong> {{value.description}}</p>
+                    </div>
+                {% endfor %}
+                <br><br><br>
+                <a href="/KPMB">Home</a>
+            </p>
+        </section>
+    </main>
+</body>
+</html>

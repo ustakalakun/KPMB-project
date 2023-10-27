@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        background-color: rgb(179, 242, 169);
+    }
+</style>
+</head>
+<body>
+    <h1>KOLEJ PROFESSIONAL MARA BERANANG</h1>
+    <strong>SEARCH BY STUDENT</strong><br>
+
+    Course:
+    <select name="code">
+        {% for data in c_code %}
+        <option value="{{ data.code }}">{{ data.description }}</option>
+        {% endfor %} 
+    </select>
+    <br><br>
+</body>
+</html>

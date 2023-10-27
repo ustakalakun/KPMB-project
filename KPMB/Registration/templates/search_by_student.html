@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>KOLEJ PROFESIONAL MARA BERANANG</h1>
+    </header>
+    <main>
+
+            <form action="search_by_student" method="post">
+                <strong>SEARCH BY STUDENT</strong>
+                <br><br>
+                {% csrf_token %}
+                ID : <input type="text" name="s_id">
+                <input type="submit" value="SEARCH">
+            </form>
+            <br><br>
+                <p><strong>ID:</strong> {{data_student.id}}</p><br><br>
+                <p><strong>Name:</strong> {{data_student.name}}</p><br><br>
+                <p><strong>Address:</strong> {{data_student.address}}</p><br><br>
+                <p><strong>Phone:</strong> {{data_student.phone}}</p><br><br>
+                <p><strong>Course:</strong> {{data_student.course_code_id}}</p><br><br>
+                <p><strong>Description:</strong> {{desc}}</p><br><br>
+                <p><strong>Status:</strong> {{data_student.status}}</p><br><br>
+
+        <br><br>
+        <a href="/KPMB">Home</a>
+
+</body>
+</html>

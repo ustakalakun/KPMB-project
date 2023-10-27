@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Student</title>
+    <style type="text/css">
+		body{
+			background-color: rgb(179, 242, 169);
+        }
+    </style>
+</head>
+<body>
+    <h1>KOLEJ PROFESSIONAL MARA BERANANG</h1>
+    <strong>NEW STUDENT</strong><br>
+
+    <form action="new_student" method="post">
+        {% csrf_token %}
+            ID:
+            <input name="s_id">
+            <br><br>
+            
+            Name: 
+            <input name="s_name">
+            <br><br>
+
+            Address:
+            <input name="s_address">
+            <br><br>
+
+            Phone:
+            <input name="s_phone">
+            <br><br>
+
+            Course:
+            <select name="s_course">
+                <option value="">Select One</option>
+                {% for data in c_code %}
+                <option value="{{ data.code }}">{{ data.code }}</option>
+                {% endfor %} 
+            </select>
+            <br><br>
+
+
+            <input type="submit" value="SAVE">
+    </form>
+    <br><br>
+    {{message}}
+
+    <a href="/KPMB">Back</a>
+    
+</body>
+</html>

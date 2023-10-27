@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>WELCOME TO KPM BERANANG</h1>
+    <strong>UPDATE COURSE</strong><br><br>
+    <form action="save_update_course/{{data.code}}" method="post">
+        {% csrf_token %}
+            Course Code : <input type="text" , name="code" value="{{data.code}}" disabled="False"><br><br><br>
+            Course Description : <input type="text", name="desc" value="{{data.description}}"><br><br><br>
+            <input type="submit" value="SAVE">
+
+    </form>
+    <br><br>
+    <a href="/KPMB/course">Back</a>
+
+    <br><br><br>
+</body>
+</html>

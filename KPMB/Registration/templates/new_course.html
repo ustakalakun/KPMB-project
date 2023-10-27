@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolej Professional MARA Beranang</title>
+    <style>
+        body {
+            background-color: #7FFFD4; /* Aquamarine */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #8B4513; /* Brown */
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        form {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 400px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        strong {
+            font-size: 20px;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #8B4513; /* Brown */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #A0522D; /* Sienna */
+        }
+
+        .message {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kolej Professional MARA Beranang</h1>
+    </header>
+    <main>
+        <form action="new_course" method="post">
+            {% csrf_token %}
+            <strong>COURSE</strong>
+            <br><br>
+            <label for="code">Course Code:</label>
+            <input type="text" id="code" name="code">
+            <br><br>
+            <label for="desc">Description:</label>
+            <input type="text" id="desc" name="desc">
+            <br><br>
+            <input type="submit" value="SAVE">
+        </form>
+    </main>
+    <footer>
+        <p class="message">{{message}}</p>
+
+        <a href="/KPMB/course/">Back</a>
+    </footer>
+</body>
+</html>
